@@ -27,6 +27,7 @@ const login = async (req, res, { userModel }) => {
 
   const { error, value } = objectSchema.validate({ email, password });
   if (error) {
+    console.error('error #%d', error);
     return res.status(409).json({
       success: false,
       result: null,

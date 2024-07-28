@@ -23,6 +23,7 @@ const forgetPassword = async (req, res, { userModel }) => {
 
   const { error, value } = objectSchema.validate({ email });
   if (error) {
+    console.error('error #%d', error);
     return res.status(409).json({
       success: false,
       result: null,

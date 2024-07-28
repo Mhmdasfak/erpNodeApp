@@ -15,6 +15,7 @@ router.route('/:subPath/:directory/:file').get(function (req, res) {
     const fileName = file;
     return res.sendFile(fileName, options, function (error) {
       if (error) {
+        console.error('error #%d', error);
         return res.status(404).json({
           success: false,
           result: null,

@@ -13,6 +13,7 @@ const create = async (req, res) => {
   const { error, value } = schema.validate(body);
   if (error) {
     const { details } = error;
+    console.error('error #%d', error);
     return res.status(400).json({
       success: false,
       result: null,

@@ -12,6 +12,7 @@ const update = async (req, res) => {
 
   const { error, value } = schema.validate(body);
   if (error) {
+    console.error('error #%d', error);
     const { details } = error;
     return res.status(400).json({
       success: false,

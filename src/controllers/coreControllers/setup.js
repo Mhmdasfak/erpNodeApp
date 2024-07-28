@@ -28,6 +28,7 @@ const setup = async (req, res) => {
 
   const { error, value } = objectSchema.validate({ name, email, password });
   if (error) {
+    console.error('error #%d', error);
     return res.status(409).json({
       success: false,
       result: null,
